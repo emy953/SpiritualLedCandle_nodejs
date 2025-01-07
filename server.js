@@ -97,7 +97,7 @@ app.get('/startup', async (req, res) => {
         } catch (error) {
           console.error('Error updating Firestore:', error);
         }
-      }, 5000);
+      }, 10000);
 
   });
   
@@ -161,7 +161,7 @@ app.get('/startup', async (req, res) => {
       } catch (error) {
         console.error('Error updating Firestore:', error);
       }
-    }, 5000);
+    }, 10000);
 
     const transactionsRef = firestore.collection('transactions');
     const transactionsSnapshot = await transactionsRef.where('stid', '==', standFound.stid).get();
