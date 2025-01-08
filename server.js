@@ -73,6 +73,7 @@ app.get('/startup', async (req, res) => {
           cr: standFound.currency
         });
         await standsRef.doc(standFound.stid).update({ isactive: true });
+        await standsRef.doc(standFound.stid).update({ candlesOn: candlesOn });
       } else {
         const newStandRef = standsRef.doc(stid);
         const newStandData = { ...defaultValues, serialnumber: serialNumber, candlesOn: parseInt(candlesOn,10), stid: stid , totalcandles: parseInt(totalcandles,10)};
