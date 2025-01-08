@@ -136,6 +136,7 @@ app.get('/startup', async (req, res) => {
             const trzid = uuidv1();
             const newTransactionData = {
                 amount: parseInt(transactiontotal),
+                candles: parseInt(candlesOn) - standFound.candlesOn,
                 content: "no message",
                 isconfirmed: true,
                 isonline: false,
