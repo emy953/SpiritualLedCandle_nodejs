@@ -67,17 +67,22 @@ app.get('/startup', async (req, res) => {
   
       if (standFound) {
         res.json({
-          message: standFound.message,
-          price1: standFound.price1,
-          price2: standFound.price2,
-          currency: standFound.currency
+          //message: standFound.message,
+          p1: standFound.price1,
+          p2: standFound.price2,
+          cr: standFound.currency
         });
         await standsRef.doc(standFound.stid).update({ isactive: true });
       } else {
         const newStandRef = standsRef.doc(stid);
         const newStandData = { ...defaultValues, serialnumber: serialNumber, candlesOn: parseInt(candlesOn,10), stid: stid , totalcandles: parseInt(totalcandles,10)};
         await newStandRef.set(newStandData);
-        res.json(newStandData);
+        res.json({
+          //message: newStandData.message,
+          p1: newStandData.price1,
+          p2: newStandData.price2,
+          cr: newStandData.currency
+          });
       }
     } catch (error) {
       console.error('Error accessing Firestore:', error);
@@ -260,5 +265,3 @@ app.get('/startup', async (req, res) => {
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
-
-//test comment test 2
