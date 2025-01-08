@@ -21,8 +21,8 @@ const defaultValues = {
   latitude: 0,
     longitude: 0,
     message: "DefaultMessage",
-    price1: 0,
-    price2: 0,
+    price1: 1,
+    price2: 2,
     uid: "Unassigned"
 };
 
@@ -102,7 +102,7 @@ app.get('/startup', async (req, res) => {
         } catch (error) {
           console.error('Error updating Firestore:', error);
         }
-      }, 10000);
+      }, 5000);
 
   });
   
@@ -166,7 +166,7 @@ app.get('/startup', async (req, res) => {
       } catch (error) {
         console.error('Error updating Firestore:', error);
       }
-    }, 10000);
+    }, 5000);
 
     const transactionsRef = firestore.collection('transactions');
     const transactionsSnapshot = await transactionsRef.where('stid', '==', standFound.stid).get();
