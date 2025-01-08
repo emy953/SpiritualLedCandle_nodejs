@@ -18,6 +18,7 @@ const defaultValues = {
   balance: 0,
   currency: 1,
   isactive: true,
+  isavaliable: false,
   latitude: 0,
     longitude: 0,
     message: "DefaultMessage",
