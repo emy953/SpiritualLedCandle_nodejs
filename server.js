@@ -74,6 +74,7 @@ app.get('/startup', async (req, res) => {
         });
         await standsRef.doc(standFound.stid).update({ isactive: true });
         await standsRef.doc(standFound.stid).update({ candlesOn: parseInt(candlesOn,10) });
+        await standsRef.doc(standFound.stid).update({ totalcandles: parseInt(totalcandles,10) });
       } else {
         const newStandRef = standsRef.doc(stid);
         const newStandData = { ...defaultValues, serialnumber: serialNumber, candlesOn: parseInt(candlesOn,10), stid: stid , totalcandles: parseInt(totalcandles,10)};
