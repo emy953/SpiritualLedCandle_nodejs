@@ -214,7 +214,7 @@ app.get('/startup', async (req, res) => {
             } catch (error) {
                 console.error('Error deleting transactions from Firestore:', error);
             }
-        }, 3000); // Set the timeout duration as needed (e.g., 60000 ms = 1 minute)
+        }, 20000); // Set the timeout duration as needed (e.g., 60000 ms = 1 minute)
 
         res.json({
             a: 1,
