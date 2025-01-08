@@ -211,17 +211,15 @@ app.get('/startup', async (req, res) => {
         }, 3000); // Set the timeout duration as needed (e.g., 60000 ms = 1 minute)
 
         res.json({
-            action: 1,
-            message: "OK",
-            total: total,
-            totalcandles: totalcandles
+            a: 1,
+            t: total,
+            tc: totalcandles
         });
     }
     else
     {
         res.json({
-            action: 0,
-            message: "OK"
+            a: 0
             });
     } }
     catch (error) {
