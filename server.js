@@ -105,7 +105,7 @@ app.get('/startup', async (req, res) => {
         } catch (error) {
           console.error('Error updating Firestore:', error);
         }
-      }, 10000);
+      }, 20000);
 
   });
   
@@ -169,7 +169,7 @@ app.get('/startup', async (req, res) => {
       } catch (error) {
         console.error('Error updating Firestore:', error);
       }
-    }, 10000);
+    }, 20000);
 
     const transactionsRef = firestore.collection('transactions');
     const transactionsSnapshot = await transactionsRef.where('stid', '==', standFound.stid).get();
@@ -214,7 +214,7 @@ app.get('/startup', async (req, res) => {
             } catch (error) {
                 console.error('Error deleting transactions from Firestore:', error);
             }
-        }, 20000); // Set the timeout duration as needed (e.g., 60000 ms = 1 minute)
+        }, 10000); // Set the timeout duration as needed (e.g., 60000 ms = 1 minute)
 
         res.json({
             a: 1,
