@@ -185,6 +185,7 @@ app.get('/startup', async (req, res) => {
             total += data.amount;
             totalcandles += data.candles;
             console.log(data.trzid);
+            console.log(serialNumber);
             onlineTransaction[serialNumber].push(data.trzid);
         }
     });
